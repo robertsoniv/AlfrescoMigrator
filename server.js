@@ -1,6 +1,7 @@
 const express = require('express')
 const AlfrescoApi = require('alfresco-js-api-node')
 const OrderCloud = require('ordercloud-javascript-sdk')
+const config = require('./config');
 const _ = require('lodash')
 const q = require('q')
 const fs = require('fs')
@@ -8,20 +9,45 @@ const uuid = require('uuid/v4')
 const {
     exec
 } = require('child_process')
-const alfresco = new AlfrescoApi({
-    hostEcm: 'https://content.bachmans.com'
-});
-const app = express()
-app.set('json spaces', 2);
 const port = 3000
-let contentfulExportData;
 
-const alfrescoNodes = {
-    documentLibrary: '0a67089c-ff35-486e-9a74-fe24165366fd',
-    categories: 'f3a2ae73-4727-40b8-8994-a6c7dc8ac094',
-    products: '40ad56b2-497d-4552-a5e2-a2eede661ca3'
-}
+//EXPRESS SERVER
+const app = express()
 
+//JSON FORMATTING
+app.set('json spaces', 2);
+let contentfulExportData
+let blockAllRequests
+
+//ALFRESCO CLIENT
+const alfresco = new AlfrescoApi({
+    hostEcm: config.alfresco.host
+});
+
+//ENDPOINTS
+app.get('/export/categories.json', (req, res) => {
+    if (blockAllRequests) {
+        res.status(403).end();
+    } else {
+        contentfulSpaceExport()
+            .then(exportAlfrescoCategories)
+            .then(path => res.sendFile(path))
+            .catch(error => res.status(500).send(error));
+    }
+})
+
+app.get('/export/products.json', (req, res) => {
+    if (blockAllRequests) {
+        res.status(403).end();
+    } else {
+        contentfulSpaceExport()
+            .then(exportAlfrescoProducts)
+            .then(path => res.sendFile(path))
+            .catch(error => res.status(500).send(error));
+    }
+})
+
+//FUNCTIONS
 function processCategories(nodeChildren, folderCache) {
     let queue = [];
     _.forEach(_.filter(nodeChildren.list.entries, (obj) => {
@@ -97,7 +123,7 @@ function mapASpot(file, cache, folder) {
 }
 
 function getFolderName(id, cache, origName) {
-    if (alfrescoNodes.categories === id) return origName;
+    if (config.alfresco.nodes.categories === id) return origName;
     var parent = _.find(cache, {
         id: id
     });
@@ -206,21 +232,28 @@ function processBrowsePages(assets, categories) {
     }))
 }
 
-function processProductImages(nodeChildren, assetCache) {
+function processProducts(nodeChildren, assetCache) {
     var df = q.defer();
-    var limitTo = 100;
+    var limitTo = 400;
     if (!assetCache) assetCache = [];
-    console.log(`Mapping products ${assetCache.length} / ${nodeChildren.list.pagination.totalItems}`)
+    var startLength = assetCache.length;
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(`Mapping Alfresco product nodes ${startLength} / ${nodeChildren.list.pagination.totalItems}`)
     assetCache = _.concat(assetCache, _.map(_.filter(nodeChildren.list.entries, obj => {
         return obj.entry.isFile && obj.entry.content.mimeType === 'image/jpeg';
     }), file => {
+        startLength++;
+        process.stdout.clearLine();
+        process.stdout.cursorTo(0);
+        process.stdout.write(`Mapping Alfresco product nodes ${startLength} / ${nodeChildren.list.pagination.totalItems}`)
         return mapProductImage(file.entry);
     }))
     if (nodeChildren.list.pagination.hasMoreItems && assetCache.length < limitTo) {
-        alfresco.nodes.getNodeChildren(alfrescoNodes.products, {
+        alfresco.nodes.getNodeChildren(config.alfresco.nodes.products, {
             skipCount: nodeChildren.list.pagination.skipCount + nodeChildren.list.pagination.count
         }).then(nextPageData => {
-            df.resolve(processProductImages(nextPageData, assetCache))
+            df.resolve(processProducts(nextPageData, assetCache))
         })
     } else {
         df.resolve(assetCache);
@@ -255,93 +288,157 @@ function mapProductImage(file) {
     }
 }
 
-app.get('/categories.json', (req, res) => {
+function contentfulSpaceExport() {
+    var df = q.defer();
     contentfulExportData = undefined;
+    process.stdout.write("Exporting latest Contentful space...");
     exec('contentful space export --config "./export_config.json"', (error, stdout, stderr) => {
         if (error) {
-            console.error(`exec error: ${error}`);
-            return;
+            df.reject(error);
+            console.error(`Space Export exec error: ${error}`);
+        } else {
+            process.stdout.write('\n');
+            process.stdout.write(stdout);
+            process.stdout.write('\n');
+            process.stdout.write('\n');
+            fs.readFile('./exports/contentful.json', 'utf8', (err, data) => {
+                if (err) {
+                    df.reject(error);
+                    console.log(`Space Export read error: ${err}`);
+                } else {
+                    contentfulExportData = JSON.parse(data);
+                    df.resolve(contentfulExportData);
+                }
+            })
         }
-        fs.readFile('./exports/contentful.json', 'utf8', (err, data) => {
-            if (err) {
-                console.log(`read error: ${err}`);
-                return;
-            }
-            contentfulExportData = JSON.parse(data);
-            alfresco.nodes.getNodeChildren(alfrescoNodes.categories)
-                .then(processCategories)
-                .then((assets) => {
-                    getAllCategories()
-                        .then((ocData) => {
-                            assets = assets.splice(0, 10);
-                            var data = JSON.stringify({
-                                    entries: processBrowsePages(assets, ocData),
-                                    assets: assets
-                                }, null,
-                                app.get('json spaces'));
+    })
+    return df.promise;
+}
 
-                            fs.writeFile('./exports/categories.json', data, 'utf8', (err) => {
-                                if (err) {
-                                    res.send(err);
-                                } else {
-                                    res.sendFile(__dirname + '/exports/categories.json')
-                                }
-                            })
-                        })
-                })
-                .catch((ex) => console.log(ex))
-        })
-    });
-})
+function exportAlfrescoCategories() {
+    var df = q.defer();
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write('Exporting Alfresco category nodes...')
+    alfresco.nodes.getNodeChildren(config.alfresco.nodes.categories)
+        .then(processCategories)
+        .then((assets) => {
+            process.stdout.clearLine();
+            process.stdout.cursorTo(0);
+            process.stdout.write('Retrieving OrderCloud categories...');
+            getAllCategories()
+                .then((ocData) => {
+                    process.stdout.clearLine();
+                    process.stdout.cursorTo(0);
+                    process.stdout.write('Writing result to export.json file...')
+                    try {
+                        var entries = processBrowsePages(assets, ocData);
+                        var data = JSON.stringify({
+                                entries: entries,
+                                assets: assets
+                            }, null,
+                            app.get('json spaces'));
+                    } catch (error) {
+                        console.log('Failed to parse category export JSON data', error);
+                        df.reject(error);
+                        return;
+                    }
 
-app.get('/products.json', (req, res) => {
-    contentfulExportData = undefined;
-    exec('contentful space export --config "./export_config.json"', (error, stdout, stderr) => {
-        if (error) {
-            console.error(`exec error: ${error}`);
-            return;
-        }
-        fs.readFile('./exports/contentful.json', 'utf8', (err, data) => {
-            if (err) {
-                console.log(`read error: ${err}`);
-                return;
-            }
-            contentfulExportData = JSON.parse(data);
-            alfresco.nodes.getNodeChildren(alfrescoNodes.products)
-                .then(processProductImages)
-                .then(productAssets => {
 
-                    var data = JSON.stringify({
-                            assets: productAssets
-                        }, null,
-                        app.get('json spaces'));
-
-                    fs.writeFile('./exports/products.json', data, 'utf8', (err) => {
+                    fs.writeFile('./exports/categories.json', data, 'utf8', (err) => {
                         if (err) {
-                            res.send(err);
+                            console.log('Failed to write to ./exports/categories.json', err);
+                            df.reject(err);
                         } else {
-                            res.sendFile(__dirname + '/exports/products.json')
+                            process.stdout.clearLine();
+                            process.stdout.cursorTo(0);
+                            process.stdout.write(`Successfully exported ${assets.length} assets and ${entries.length} entries to ./exports/categories.json.\n`);
+                            df.resolve(__dirname + '/exports/categories.json');
                         }
                     })
                 })
-                .catch((ex) => console.log(ex))
+                .catch(ex => {
+                    console.log('Failed to get all ordercloud categories', ex);
+                })
         })
-    });
-})
+        .catch(ex => {
+            console.log('Failed to export alfresco categories', ex);
+            df.reject(ex);
+        })
+    return df.promise;
+}
+
+function exportAlfrescoProducts() {
+    var df = q.defer();
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(`Mapping Alfresco product nodes 0 / 0`);
+    alfresco.nodes.getNodeChildren(config.alfresco.nodes.products)
+        .then(processProducts)
+        .then((assets) => {
+            process.stdout.clearLine();
+            process.stdout.cursorTo(0);
+            process.stdout.write('Writing result to export.json file...')
+            try {
+                var data = JSON.stringify({
+                        assets: assets
+                    }, null,
+                    app.get('json spaces'));
+            } catch (error) {
+                console.log('Failed to parse product export JSON data', error);
+                df.reject(error);
+                return;
+            }
+
+            fs.writeFile('./exports/products.json', data, 'utf8', (err) => {
+                if (err) {
+                    console.log('Failed to write to ./exports/products.json', err);
+                    df.reject(err);
+                } else {
+                    process.stdout.clearLine();
+                    process.stdout.cursorTo(0);
+                    process.stdout.write(`Successfully exported ${assets.length} assets to ./exports/products.json.\n`);
+                    df.resolve(__dirname + '/exports/products.json');
+                }
+            })
+        })
+        .catch(ex => {
+            console.log('Failed to export alfresco products', ex);
+            df.reject(ex);
+        })
+    return df.promise;
+}
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}!`);
-    console.log('Logging into Alfresco...');
-    alfresco.login('admin', 'R1v3tatbachmans')
-        .then(data => console.log('Login successful:', data))
-        .catch(ex => console.log('Login failed:', ex))
+    console.log(`Alfresco Migragor listening on port ${port}`);
+    console.log('Authenticating...')
+    var loginCount = 0;
 
-    console.log('Logging into OrderCloud');
-    OrderCloud.Auth.ClientCredentials('W3lc0m31', '86E38B56-5AA3-4861-8992-7EBFECEE9B1C', ["CatalogReader", "CategoryReader"])
-        .then((data) => {
-            console.log('Login successful:', data.access_token);
-            OrderCloud.ApiClient.instance.authentications['oauth2'].accessToken = data.access_token;
+    function loginCheck() {
+        loginCount++;
+        if (loginCount === 2) console.log('Migrator Authenticated. Application Ready.')
+    }
+    //AUTHENTICATE ALFRESCO
+    alfresco.login(config.alfresco.username, config.alfresco.password)
+        .then(data => {
+            console.log('Logged into Alfresco');
+            loginCheck();
         })
-        .catch(ex => console.log('Login failed:', ex))
+        .catch(ex => {
+            console.log('Alfresco Login Failed', ex);
+            blockAllRequests = true;
+        })
+
+    //AUTHENTICATE ORDERCLOUD (CLIENT CREDENTIALS OAUTH 2.0 WORKFLOW)
+    OrderCloud.Auth.ClientCredentials(config.ordercloud.secret, config.ordercloud.clientId, config.ordercloud.scope)
+        .then((data) => {
+            console.log('Logged into OrderCloud');
+            OrderCloud.ApiClient.instance.authentications['oauth2'].accessToken = data.access_token;
+            loginCheck();
+        })
+        .catch(ex => {
+            console.log('OrderCloud Login Failed:', ex);
+            blockAllRequests = true;
+        })
 
 })

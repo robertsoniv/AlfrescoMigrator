@@ -7082,52 +7082,6 @@
             "id": "3fc4d4qtiiuc"
           }
         },
-        "id": "5BmPlPgTx6GcaaE0YsEwAQ",
-        "type": "Entry",
-        "createdAt": "2018-09-19T18:14:37.687Z",
-        "updatedAt": "2018-09-19T18:14:37.687Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "251VCgh2rYJAHmAan1HgW2"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "251VCgh2rYJAHmAan1HgW2"
-          }
-        },
-        "version": 1,
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "browsePage"
-          }
-        }
-      },
-      "fields": {
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "3fc4d4qtiiuc"
-          }
-        },
         "id": "2B0hgUwj32cAaumqg4swgA",
         "type": "Entry",
         "createdAt": "2018-09-20T17:20:33.319Z",
@@ -10202,6 +10156,352 @@
               }
             }
           ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "2PfyQL5wzeAYOmIKAk2Euq",
+        "type": "Entry",
+        "createdAt": "2018-09-25T21:16:02.716Z",
+        "updatedAt": "2018-09-25T21:16:04.520Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "version": 2,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "staticPage"
+          }
+        }
+      },
+      "fields": {
+        "slug": {
+          "en-US": "untitled-entry-2018-09-25-at-09-16-02"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "2ZwN6miFFSMem2wcEUYKIU",
+        "type": "Entry",
+        "createdAt": "2018-09-25T21:17:09.098Z",
+        "updatedAt": "2018-09-25T22:11:36.585Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "251VCgh2rYJAHmAan1HgW2"
+          }
+        },
+        "publishedCounter": 8,
+        "version": 169,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "251VCgh2rYJAHmAan1HgW2"
+          }
+        },
+        "publishedVersion": 168,
+        "firstPublishedAt": "2018-09-25T21:25:56.716Z",
+        "publishedAt": "2018-09-25T22:11:36.585Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "staticPage"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Contact Us"
+        },
+        "slug": {
+          "en-US": "contact-us"
+        },
+        "seoMetaData": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4kC6HZRfb2ySO6cWKYWoug"
+            }
+          }
+        },
+        "navigation": {
+          "en-US": true
+        },
+        "listOrder": {
+          "en-US": 2
+        },
+        "section": {
+          "en-US": "customer-service"
+        },
+        "content": {
+          "en-US": "### Locations\nWith 6 garden centers, U.S. Bank Plaza, and 27 floral departments within Lunds & Byerly's stores, you're never far from the beauty of Bachman's. For addresses, phone numbers, and store hours, please check our Store Directory.\n\n### Call Center\nTo place an order with us over the phone, call:\n\n- Local: (612) 861-7311\n- Toll Free: 1 (866) 222-4626\n\n### Customer Service\nTo express comments or concerns about Bachman's or your Bachman's order, contact us by phone or email:\n\n- Local: (612) 861-8818\n- Toll Free: 1 (877) 222-4626\n- Email: [CustomerService@bachmans.com](mailto://CustomerService@bachmans.com)\n\n### Social Media\nTo connect with us via social media platforms, follow, tag, or message:    \n\n![Facebook](//images.ctfassets.net/3fc4d4qtiiuc/4jivTYBl3aoAmUSoOKsuw4/7f55bd77405136ed353cb65fa0c4ade0/Facebook.jpg) Facebook: [facebook.com/BachmansMN](https://facebook.com/BachmansMN \"Facebook\")\n\n![Twitter](//images.ctfassets.net/3fc4d4qtiiuc/6qFvh4gVRSsiYOC4ycWkOS/c93fa2f024fb6df075864aa6d335d93a/Twitter.jpg) Twitter: @ShopBachmans | [twitter.com/ShopBachmans](https://twitter.com/ShopBachmans \"twitter\")\n\n![Instagram](//images.ctfassets.net/3fc4d4qtiiuc/3EmyZJm2VaYSa2IKWweoU4/c5130b40ee7100989c5dba7d2ce27df3/Instagram.jpg) Instagram: @ShopBachmans | [instagram.com/ShopBachmans](https://instagram.com/ShopBachmans \"instagram\")\n\n![Pinterest](//images.ctfassets.net/3fc4d4qtiiuc/FaNXzmtE9q4uukyMoyqoK/ffc83e3d17c7138e4daf16313bd4a9a2/Pinterest.jpg) Pinterest: [pinterest.com/bachmans](https://pinterest.com/bachmans \"pinterest\")\n\n![YouTube](//images.ctfassets.net/3fc4d4qtiiuc/3lnIN1TSucY2wOI00SC6Mu/9ca267924bd8934681612dbd0119ddbd/YouTube.jpg) YouTube: [youtube.com/user/BachmansFloral](https://youtube.com/user/BachmansFloral \"YouTube\")"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "4kC6HZRfb2ySO6cWKYWoug",
+        "type": "Entry",
+        "createdAt": "2018-09-25T21:17:21.821Z",
+        "updatedAt": "2018-09-25T21:18:11.199Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 31,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 30,
+        "firstPublishedAt": "2018-09-25T21:18:11.199Z",
+        "publishedAt": "2018-09-25T21:18:11.199Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "seoMetaData"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Contact Bachman's Floral, Gift & Garden"
+        },
+        "description": {
+          "en-US": "To place an order with us over the phone, call locally (612) 861-7311 or toll-free 1 (866) 222-4626."
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "4IU9UgM8MoEcCCu4woS6K2",
+        "type": "Entry",
+        "createdAt": "2018-09-25T21:31:16.187Z",
+        "updatedAt": "2018-09-25T21:37:13.768Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 97,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 96,
+        "firstPublishedAt": "2018-09-25T21:35:19.748Z",
+        "publishedAt": "2018-09-25T21:37:13.768Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "staticPage"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Delivery"
+        },
+        "slug": {
+          "en-US": "delivery"
+        },
+        "seoMetaData": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "ZKSvVZ81Y2CuuIAmy6qY4"
+            }
+          }
+        },
+        "bannerDescription": {
+          "en-US": "Bachman's delivery fleet"
+        },
+        "navigation": {
+          "en-US": true
+        },
+        "listOrder": {
+          "en-US": 3
+        },
+        "section": {
+          "en-US": "customer-service"
+        },
+        "content": {
+          "en-US": "![BachmansFleet](//images.ctfassets.net/3fc4d4qtiiuc/57yKwy1s9yQWWi6W8QoW4K/95fdf7d2b6912b8422d228385c765427/BachmansFleet.jpg)\n\nBachman’s delivers over 200 packages per day in their fleet of purple trucks.\n\n### Delivery Times\nOrders received by 11:00 a.m. Monday – Saturday CST can be delivered in our delivery area by 5 p.m. CST.  We do not deliver on Sundays.\n\nOrders received before noon CST the day before delivery have the option to choose morning delivery (9 a.m. – 1 p.m.), afternoon delivery (1 p.m. – 5 p.m.), or no preference.\n\nFuneral orders can be delivered for services beginning at 10 a.m. CST or later.  If delivery is required before 10 a.m., we will deliver the day prior to the service.\n\nIn the case of inclement weather, we may need to adjust our delivery times and availability.\n\n### Delivery Rates\n\n- Our standard delivery fee is $12.99*.\n- Funeral and church delivery is $12.99.\n- Cemetery delivery is $15.99.\n- Wire service out-of-town rates vary. Please call the Order Center at (612) 861-7311 for specific information.\n**For some items, a handling fee will apply.*\n\n### Handling Fees\n\nSome items require extra people, equipment, or care for successful delivery.  For these items, a handling fee will apply.\n\nItems requiring a handling fee include:\n\n- Fresh design, delivery of 50 or more items to one location\n- Annuals and perennials, delivery of 50 or more items to one location\n- Trees\n- Evergreens\n- Shrubs\n- B&B trees\n- Christmas trees\n- Patio furniture\n- Pottery, fountains and statuary\n- Gazebos and arbors\n- Bagged soils, mulches, and straw\n- Raised gardens\n- Fire pits\n\n### Delivery Locations\n\nWe deliver to cities surrounding our stores in the Minneapolis/St. Paul area. For a list of cities we deliver to, please see the Delivery FAQ’s.\n\nWe also offer nationwide delivery for cities outside of our local delivery area through wire services.\n\nMany of our wonderful gift products can be shipped nationwide via UPS.  This includes our Signature Watch 'em Grow™ bulb gardens, gift products, some grills and patio furniture, and gift cards.\n\nFor additional delivery information, please see the Delivery FAQ’s or contact the Order Center at (612) 861-7311."
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "ZKSvVZ81Y2CuuIAmy6qY4",
+        "type": "Entry",
+        "createdAt": "2018-09-25T21:31:26.859Z",
+        "updatedAt": "2018-09-25T21:32:07.856Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 34,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 33,
+        "firstPublishedAt": "2018-09-25T21:32:07.856Z",
+        "publishedAt": "2018-09-25T21:32:07.856Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "seoMetaData"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Same-Day Delivery in the Twin Cities at Bachmans.com"
+        },
+        "description": {
+          "en-US": "Bachman's delivers its signature purple packages every day in a fleet of colorful purple trucks. Order before 11 a.m. for same-day delivery in the Twin Cities metro area."
         }
       }
     }
@@ -36718,6 +37018,408 @@
               }
             },
             "fileName": "208862.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "FaNXzmtE9q4uukyMoyqoK",
+        "type": "Asset",
+        "createdAt": "2018-09-25T21:23:59.096Z",
+        "updatedAt": "2018-09-25T21:24:02.546Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 2,
+        "firstPublishedAt": "2018-09-25T21:24:02.546Z",
+        "publishedAt": "2018-09-25T21:24:02.546Z"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Pinterest"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/3fc4d4qtiiuc/FaNXzmtE9q4uukyMoyqoK/ffc83e3d17c7138e4daf16313bd4a9a2/Pinterest.jpg",
+            "details": {
+              "size": 2119,
+              "image": {
+                "width": 42,
+                "height": 40
+              }
+            },
+            "fileName": "Pinterest.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "3EmyZJm2VaYSa2IKWweoU4",
+        "type": "Asset",
+        "createdAt": "2018-09-25T21:23:59.106Z",
+        "updatedAt": "2018-09-25T21:24:02.484Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 2,
+        "firstPublishedAt": "2018-09-25T21:24:02.484Z",
+        "publishedAt": "2018-09-25T21:24:02.484Z"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Instagram"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/3fc4d4qtiiuc/3EmyZJm2VaYSa2IKWweoU4/c5130b40ee7100989c5dba7d2ce27df3/Instagram.jpg",
+            "details": {
+              "size": 2032,
+              "image": {
+                "width": 40,
+                "height": 40
+              }
+            },
+            "fileName": "Instagram.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "3lnIN1TSucY2wOI00SC6Mu",
+        "type": "Asset",
+        "createdAt": "2018-09-25T21:23:59.106Z",
+        "updatedAt": "2018-09-25T21:24:02.234Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 2,
+        "firstPublishedAt": "2018-09-25T21:24:02.234Z",
+        "publishedAt": "2018-09-25T21:24:02.234Z"
+      },
+      "fields": {
+        "title": {
+          "en-US": "YouTube"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/3fc4d4qtiiuc/3lnIN1TSucY2wOI00SC6Mu/9ca267924bd8934681612dbd0119ddbd/YouTube.jpg",
+            "details": {
+              "size": 2037,
+              "image": {
+                "width": 54,
+                "height": 40
+              }
+            },
+            "fileName": "YouTube.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "6qFvh4gVRSsiYOC4ycWkOS",
+        "type": "Asset",
+        "createdAt": "2018-09-25T21:23:59.108Z",
+        "updatedAt": "2018-09-25T21:24:02.478Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 2,
+        "firstPublishedAt": "2018-09-25T21:24:02.478Z",
+        "publishedAt": "2018-09-25T21:24:02.478Z"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Twitter"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/3fc4d4qtiiuc/6qFvh4gVRSsiYOC4ycWkOS/c93fa2f024fb6df075864aa6d335d93a/Twitter.jpg",
+            "details": {
+              "size": 2067,
+              "image": {
+                "width": 46,
+                "height": 40
+              }
+            },
+            "fileName": "Twitter.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "4jivTYBl3aoAmUSoOKsuw4",
+        "type": "Asset",
+        "createdAt": "2018-09-25T21:23:59.118Z",
+        "updatedAt": "2018-09-25T21:24:02.488Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 2,
+        "firstPublishedAt": "2018-09-25T21:24:02.488Z",
+        "publishedAt": "2018-09-25T21:24:02.488Z"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Facebook"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/3fc4d4qtiiuc/4jivTYBl3aoAmUSoOKsuw4/7f55bd77405136ed353cb65fa0c4ade0/Facebook.jpg",
+            "details": {
+              "size": 1822,
+              "image": {
+                "width": 39,
+                "height": 40
+              }
+            },
+            "fileName": "Facebook.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "3fc4d4qtiiuc"
+          }
+        },
+        "id": "57yKwy1s9yQWWi6W8QoW4K",
+        "type": "Asset",
+        "createdAt": "2018-09-25T21:32:24.215Z",
+        "updatedAt": "2018-09-25T21:32:34.698Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1BvQC5mY8VNECxWqz0a1U6"
+          }
+        },
+        "publishedVersion": 4,
+        "firstPublishedAt": "2018-09-25T21:32:34.698Z",
+        "publishedAt": "2018-09-25T21:32:34.698Z"
+      },
+      "fields": {
+        "title": {
+          "en-US": "BachmansFleet"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/3fc4d4qtiiuc/57yKwy1s9yQWWi6W8QoW4K/95fdf7d2b6912b8422d228385c765427/BachmansFleet.jpg",
+            "details": {
+              "size": 25996,
+              "image": {
+                "width": 600,
+                "height": 170
+              }
+            },
+            "fileName": "BachmansFleet.jpg",
             "contentType": "image/jpeg"
           }
         }

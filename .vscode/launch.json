@@ -7,13 +7,13 @@
         "type": "chrome",
         "request": "launch",
         "name": "Launch Categories",
-        "url": "http://localhost:3000/categories.json",
+        "url": "http://localhost:3000/export/categories.json",
         "webRoot": "${workspaceFolder}"
     }, {
         "type": "chrome",
         "request": "launch",
         "name": "Launch Products",
-        "url": "http://localhost:3000/products.json",
+        "url": "http://localhost:3000/export/products.json",
         "webRoot": "${workspaceFolder}"
     }]
 }
